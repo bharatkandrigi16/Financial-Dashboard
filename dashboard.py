@@ -2,16 +2,12 @@ import streamlit as st
 import pandas as pd
 import finnhub
 import datetime, time
-#import tweepy - requires higher access level for displaying user tweets
 import praw
 import plotly.graph_objects as go
 from config import API_KEY, CLIENT_ID, SECRET, DB_HOST, DB_USER, DB_PASS, DB_NAME
 import MySQLdb
 connection = MySQLdb.Connect(host=DB_HOST, user=DB_USER, passwd=DB_PASS, database=DB_NAME)
 db_cursor = connection.cursor()
-# tweepy_auth = tweepy.OAuthHandler(TWITTER_API_KEY, TWITTER_API_SECRET_KEY)
-# tweepy_auth.set_access_token(TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET)
-# api = tweepy.API(tweepy_auth)
 reddit = praw.Reddit(
     client_id=CLIENT_ID,
     client_secret=SECRET,
