@@ -2,19 +2,11 @@ import streamlit as st
 import pandas as pd
 import finnhub
 import datetime, time
-import praw
 import plotly.graph_objects as go
-from config import API_KEY, CLIENT_ID, SECRET, DB_HOST, DB_USER, DB_PASS, DB_NAME
+from config import API_KEY, DB_HOST, DB_USER, DB_PASS, DB_NAME
 import MySQLdb
 connection = MySQLdb.Connect(host=DB_HOST, user=DB_USER, passwd=DB_PASS, database=DB_NAME)
 db_cursor = connection.cursor()
-reddit = praw.Reddit(
-    client_id=CLIENT_ID,
-    client_secret=SECRET,
-    username='Southern-Rest-1359',
-    password='$Nylonkitties$',
-    user_agent='Finance Dashboard'
-)
 
 finnhub_client = finnhub.Client(api_key=API_KEY)
 stock_candle_data, category = (None, None)
