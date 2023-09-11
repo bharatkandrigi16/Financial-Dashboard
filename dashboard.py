@@ -19,7 +19,7 @@ reddit = praw.Reddit(
 finnhub_client = finnhub.Client(api_key=API_KEY)
 stock_candle_data, category = (None, None)
 ticker = None
-option = st.sidebar.selectbox("Which Dashboard?", ('Company News', 'Data', 'Patterns'), 0)
+option = st.sidebar.selectbox("Which Dashboard?", ('Company News', 'Data', 'Predictions'), 0)
 st.header(option)
 
 if option == 'Company News':
@@ -152,8 +152,8 @@ if option == 'Data':
         db_cursor.close()
         connection.close()
 
-if option == 'Patterns':
-    pass
+if option == 'Predictions':
+    st.subheader("Coming Soon!!")
     
 
 
